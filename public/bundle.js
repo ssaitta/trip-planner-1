@@ -67,8 +67,9 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-console.log('In our JS file in SRC')
 
+
+const buildMarker = __webpack_require__(3)
 const mapboxgl = __webpack_require__(1);
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoia2F0eWU2MTAiLCJhIjoiY2phOXRnYm5nMGJpMDJxcXB4MjR5N295MyJ9.XoJY8xER4S-wfLOKhgPZ6Q';
@@ -79,6 +80,12 @@ const map = new mapboxgl.Map({
   zoom: 12, // starting zoom
   style: "mapbox://styles/mapbox/streets-v10" // mapbox has lots of different map styles available.
 });
+console.log(buildMarker)
+
+const marker = buildMarker('activity',[-74.009151, 40.705086])
+
+marker.addTo(map);
+
 
 
 /***/ }),
@@ -660,6 +667,45 @@ try {
 
 module.exports = g;
 
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const mapboxgl = __webpack_require__(1);
+
+//let mapElement = document.createElement('div');
+// mapElement.style.height = "39px";
+// mapElement.style.width = "32px";
+// mapElement.style.backgroundImage = "url(http://i.imgur.com/WbMOfMl.png)";
+
+// new mapboxgl.Marker(mapElement).setLngLat([-74.009151, 40.705086]).addTo(map);
+
+function markerType(type){
+    if(type==="activity"){
+        return `url(http://i.imgur.com/WbMOfMl.png)`
+
+    }
+    if(type==="hotel"){
+        return `url(http://i.imgur.com/D9574Cu.png)`
+            }
+    if(type==="restaurant"){
+        return `url(http://i.imgur.com/cqR6pUI.png)`
+            }
+}
+
+function buildMarker(type, cordArray){
+    let mapElement = document.createElement('div');
+    mapElement.style.height = "39px";
+    mapElement.style.width = "32px";
+    mapElement.style.backgroundImage = markerType(type);
+    
+    new mapboxgl.Marker(mapElement).setLngLat(cordArray); 
+}
+
+
+
+module.exports = buildMarker
 
 /***/ })
 /******/ ]);
