@@ -21,16 +21,14 @@ img{
 header{
   display: flex;
   justify-content: space-between;
-  background-color: rgb(108, 187, 108);
+  background-color: rgb(85, 85, 184);
 }
 
 nav{
   display: flex;
   flex: 0 0 50%;
-  align-items: center;
-  justify-content: space-evenly;
-
-
+  
+  
   /* align-content: center; */
   /* justify-content: flex-end; */
 }
@@ -38,7 +36,7 @@ nav{
 .nav-item{
   flex: 0 0 33%;
   text-align: center;
-  /* align-self: center; */
+  align-self: center;
 }
 
 .nav-item a{
@@ -49,29 +47,36 @@ nav{
 }
 
 #wholeBody{
-  display: flex;
-
+  /* display: flex; */
+  
 }
 
 #map{
-  flex: 0 0 65%;
-  z-index: 2;
+  /* flex: 0 0 65%; */
 }
 
-.tripStuff{
+.tripstuff{
   display: flex;
   flex-direction: column;
-  flex: 0 0 35%;
-  justify-content: space-evenly;
-  z-index: 1;
+  /* flex: 0 0 35% */
 }
 
-.panel {
-  border-style: solid;
-  z-index: 3;
+#options{
+  position: absolute;
+  top: 160px;
+  right: 0px;
+  background-color: lightblue;
+  padding: 20px;
+}
+#itinerary{
+  position: absolute;
+  top: 450px;
+  right: 0px;
+  background-color: lightblue;
+  padding: 60px;
 }
 
 
-/* #itinerary{
-
-} */
+select{
+  width: 25 px;
+}
