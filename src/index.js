@@ -11,9 +11,9 @@ const map = new mapboxgl.Map({
   zoom: 12, // starting zoom
   style: "mapbox://styles/mapbox/streets-v10" // mapbox has lots of different map styles available.
 });
-console.log(buildMarker)
 
-const marker = buildMarker('activity',[-74.009151, 40.705086])
+const marker = buildMarker('activities', [-74.009151, 40.705086])
+console.log(marker)
 
 marker.addTo(map);
 
